@@ -118,7 +118,8 @@
     "dev:start": "cross-env BABEL_ENV=registry babel-node --extensions \".ts,.tsx\" src/lib/cli",
     "code:build": "cross-env BABEL_ENV=registry babel src/ --out-dir build/ --copy-files --extensions \".ts,.tsx\" --source-maps inline",
     "code:docker-build": "cross-env BABEL_ENV=registry-docker babel src/ --out-dir build/ --copy-files --extensions \".ts,.tsx\"",
-    "build:docker": "docker build -t verdaccio/verdaccio:local . --no-cache"
+    "build:docker": "docker build -t verdaccio/verdaccio:local . --no-cache",
+    "build:docker:arm32v6": "docker build -f Dockerfile.arm32v6 -t verdaccio/verdaccio:arm32v6 . --no-cache"
   },
   "engines": {
     "node": ">=8",
